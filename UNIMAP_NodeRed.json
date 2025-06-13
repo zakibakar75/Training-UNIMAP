@@ -1,0 +1,523 @@
+[
+    {
+        "id": "654f4c1912da3ed6",
+        "type": "tab",
+        "label": "Device Simulator ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "848399e34fb76ac3",
+        "type": "tab",
+        "label": "LoRaWAN",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "560e4fea0fef143a",
+        "type": "mqtt-broker",
+        "name": "192.168.68.10 (MOMS-DeviceSimulator)",
+        "broker": "192.168.68.10",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "427315ca3de0ad37",
+        "type": "mqtt-broker",
+        "name": "TTN",
+        "broker": "au1.cloud.thethings.network",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "36685056de6a8056",
+        "type": "mqtt-broker",
+        "name": "192.168.68.10 (MOMS-7C74)",
+        "broker": "192.168.68.10",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "40d1f8d6c86c42be",
+        "type": "mqtt-broker",
+        "name": "192.168.68.10 (MOMS-7C76)",
+        "broker": "192.168.68.10",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "69834aaa47e5a3b5",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker at DigitalOcean",
+        "broker": "167.71.199.160",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6afa65cf2641315b",
+        "type": "inject",
+        "z": "654f4c1912da3ed6",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "0cb438a6f9b043bf"
+            ]
+        ]
+    },
+    {
+        "id": "0cb438a6f9b043bf",
+        "type": "random",
+        "z": "654f4c1912da3ed6",
+        "name": "msg.temperature",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "temperature",
+        "x": 370,
+        "y": 140,
+        "wires": [
+            [
+                "dcf4a4fa10c3373f"
+            ]
+        ]
+    },
+    {
+        "id": "be6bc4dfe4bd6761",
+        "type": "debug",
+        "z": "654f4c1912da3ed6",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "dfd405961c6fcc00",
+        "type": "function",
+        "z": "654f4c1912da3ed6",
+        "name": "Combines all data, JSON formatted",
+        "func": "msg.payload = {\n    temperature : msg.temperature,\n    humidity : msg.humidity,\n    vibration : msg.vibration\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "be6bc4dfe4bd6761"
+            ]
+        ]
+    },
+    {
+        "id": "192d1d63f050b744",
+        "type": "mqtt out",
+        "z": "654f4c1912da3ed6",
+        "name": "192.168.68.10 (MOMS-DeviceSimulator)",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "560e4fea0fef143a",
+        "x": 1080,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "08de0fa687a4e1c1",
+        "type": "random",
+        "z": "654f4c1912da3ed6",
+        "name": "msg.vibration",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "vibration",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "dfd405961c6fcc00"
+            ]
+        ]
+    },
+    {
+        "id": "dcf4a4fa10c3373f",
+        "type": "random",
+        "z": "654f4c1912da3ed6",
+        "name": "msg.humidity",
+        "low": "0",
+        "high": "100",
+        "inte": "true",
+        "property": "humidity",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "08de0fa687a4e1c1"
+            ]
+        ]
+    },
+    {
+        "id": "eb1f9c7ef12640f3",
+        "type": "mqtt out",
+        "z": "654f4c1912da3ed6",
+        "name": "MQTT Broker at DigitalOcean",
+        "topic": "v1/devices/me/telemetry/zaki",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "69834aaa47e5a3b5",
+        "x": 1050,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4f8956d9dc7f66c4",
+        "type": "mqtt in",
+        "z": "848399e34fb76ac3",
+        "name": "",
+        "topic": "v3/dragino-lht65-mimos@ttn/devices/+/up",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "427315ca3de0ad37",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "36700c1895ef3f5a"
+            ]
+        ]
+    },
+    {
+        "id": "36700c1895ef3f5a",
+        "type": "function",
+        "z": "848399e34fb76ac3",
+        "name": "Device ID",
+        "func": "msg.end_device_id = msg.payload.end_device_ids.device_id\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "fab143f429f87ff7"
+            ]
+        ]
+    },
+    {
+        "id": "fab143f429f87ff7",
+        "type": "function",
+        "z": "848399e34fb76ac3",
+        "name": "Battery Level",
+        "func": "msg.batV = msg.payload.uplink_message.decoded_payload.BatV\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "e5363ed7d9b726d4"
+            ]
+        ]
+    },
+    {
+        "id": "e5363ed7d9b726d4",
+        "type": "function",
+        "z": "848399e34fb76ac3",
+        "name": "Temperature",
+        "func": "msg.temp_SHT = msg.payload.uplink_message.decoded_payload.TempC_SHT\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "60a67e0ec76bb234"
+            ]
+        ]
+    },
+    {
+        "id": "60a67e0ec76bb234",
+        "type": "function",
+        "z": "848399e34fb76ac3",
+        "name": "JSON Combines All Data",
+        "func": "msg.payload = {\n    devId: msg.end_device_id,\n    batV: msg.batV,\n    temperature: msg.temp_SHT\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 420,
+        "wires": [
+            [
+                "c90c64391adbee5f",
+                "b54d50b10f9e602a"
+            ]
+        ]
+    },
+    {
+        "id": "c90c64391adbee5f",
+        "type": "debug",
+        "z": "848399e34fb76ac3",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b54d50b10f9e602a",
+        "type": "switch",
+        "z": "848399e34fb76ac3",
+        "name": "check ID",
+        "property": "payload.devId",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "eui-a84041f381827c74",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "eui-a84041f171827c76",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 520,
+        "y": 540,
+        "wires": [
+            [
+                "9fb8fb349c67839e"
+            ],
+            [
+                "0142bd716d05f8e6"
+            ]
+        ]
+    },
+    {
+        "id": "9fb8fb349c67839e",
+        "type": "mqtt out",
+        "z": "848399e34fb76ac3",
+        "name": "192.168.68.10 (MOMS-7C74)",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "36685056de6a8056",
+        "x": 790,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "0142bd716d05f8e6",
+        "type": "mqtt out",
+        "z": "848399e34fb76ac3",
+        "name": "192.168.68.10 (MOMS-7C76)",
+        "topic": "v1/devices/me/telemetry",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "40d1f8d6c86c42be",
+        "x": 790,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "daca57a717468914",
+        "type": "comment",
+        "z": "848399e34fb76ac3",
+        "name": "Click to open",
+        "info": "Username : dragino-lht65-mimos@ttn\nPassword : NNSXS.B34STVHQ7PBJWDJUMLZQDKNP3LKYESHR4JE7DTA.K3H23PJJC3YBYEVNRKQKX5LJPKSQFVQZCAPHLHT2DQ2DBLXNSI2A",
+        "x": 230,
+        "y": 60,
+        "wires": []
+    }
+]
