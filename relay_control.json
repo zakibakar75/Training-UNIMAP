@@ -1,0 +1,123 @@
+[
+    {
+        "id": "f35390c059e80894",
+        "type": "tab",
+        "label": "MOMS Http",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4b169b95ca882e8c",
+        "type": "http request",
+        "z": "f35390c059e80894",
+        "name": "Send to MOMS",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.68.10:8080/api/v1/C9wd6608F8T52W3ZiEje/telemetry",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "application/json",
+                "valueValue": ""
+            }
+        ],
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "356a04f969fe20d4"
+            ]
+        ]
+    },
+    {
+        "id": "356a04f969fe20d4",
+        "type": "debug",
+        "z": "f35390c059e80894",
+        "name": "Debug Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "0d633a3bea054203",
+        "type": "inject",
+        "z": "f35390c059e80894",
+        "name": "Trigger every 60s",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "61a722fe2cddcff4"
+            ]
+        ]
+    },
+    {
+        "id": "61a722fe2cddcff4",
+        "type": "function",
+        "z": "f35390c059e80894",
+        "name": "Prepare Telemetry Payload",
+        "func": "var temperature = Math.random() * (30 - 15) + 15;\nvar timestamp = Date.now();\nmsg.payload = {\n    ts: timestamp,\n    values: {\n        temperature: Math.round(temperature * 10) / 10\n    }\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "4b169b95ca882e8c",
+                "b2444596cd03f069"
+            ]
+        ]
+    },
+    {
+        "id": "b2444596cd03f069",
+        "type": "debug",
+        "z": "f35390c059e80894",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 140,
+        "wires": []
+    }
+]
