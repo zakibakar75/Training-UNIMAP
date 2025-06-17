@@ -1,0 +1,41 @@
+import requests
+import time
+from datetime import datetime
+
+# MOMS configuration
+MOMS_HOST = "https://cap.mimos.my"  # MOMS Cloud
+DEVICE_TOKEN = "your-device-token"  # Replace with your device access token
+
+# Sensor data (example values, replace with actual sensor readings)
+temperature = 25.5  # Example temperature in Celsius
+humidity = 60.0     # Example humidity in %
+
+# Get current timestamp in milliseconds (Unix epoch)
+timestamp_ms = int(time.time() * 1000)  # Convert seconds to milliseconds
+
+# Prepare the telemetry payload
+telemetry_data = {
+    "ts": timestamp_ms,  # Device timestamp in milliseconds
+    "values": {
+        "temperature": temperature,
+        "humidity": humidity
+    }
+}
+
+# MOMS HTTP API endpoint
+url = f"{MOMS_HOST}/api/v1/{DEVICE_TOKEN}/telemetry"
+
+try:
+    # Send POST request to MOMS
+    response = requests.post(url, json=telemetry_data)
+
+    # Check the response
+    if response.status_code == 200:
+        print("Data sent successfully to MOMS!")
+        print(f"Timestamp: {datetime.fromtimestamp(timestamp_ms / 1000).strftime('%Y-%m-%d %H:%M:%S')}")
+        print(f"Temperature: {temperature} °C, Humidity: {humidity} %")
+    else:
+        print(f"Failed to send data. Status code: {response.status_code}, Response: {response.text}")
+
+except requests.exceptions.RequestException as e:
+    print(f"Error sending data to MOMS: {e}")
